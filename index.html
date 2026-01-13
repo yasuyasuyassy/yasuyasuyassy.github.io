@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - CV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Modern CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #2563eb;
+            --text-color: #1f2937;
+            --light-text: #6b7280;
+            --background: #ffffff;
+            --card-background: #f9fafb;
+            --border-color: #e5e7eb;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary-color: #3b82f6;
+                --text-color: #f9fafb;
+                --light-text: #d1d5db;
+                --background: #111827;
+                --card-background: #1f2937;
+                --border-color: #374151;
+            }
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: var(--background);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        /* Header Styles */
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid var(--border-color);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+        
+        .title {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--light-text);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-item:hover {
+            color: var(--primary-color);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-icon {
+            color: var(--light-text);
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        
+        .social-icon:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Section Styles */
+        section {
+            margin-bottom: 40px;
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--primary-color);
+            display: inline-block;
+        }
+        
+        /* Experience Styles */
+        .experience-item, .project-item {
+            background: var(--card-background);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .experience-item:hover, .project-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .job-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+        
+        .company {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .date {
+            color: var(--light-text);
+            font-size: 0.9rem;
+            background: var(--border-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+        
+        ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            color: var(--text-color);
+        }
+        
+        /* Skills Styles */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill-tag {
+            background: var(--primary-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        /* Projects Styles */
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .project-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+        
+        .project-stats {
+            color: var(--light-text);
+            font-size: 0.9rem;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            color: var(--light-text);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .job-header, .project-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .date {
+                align-self: flex-start;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                max-width: none;
+                padding: 0;
+            }
+            
+            .experience-item, .project-item {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+            
+            .social-links, footer {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Your Name</h1>
+        <p class="title">Your Professional Title Here</p>
+        
+        <div class="contact-info">
+            <a href="mailto:your.email@example.com" class="contact-item">
+                <i class="fas fa-envelope"></i>
+                your.email@example.com
+            </a>
+            <a href="https://yourusername.github.io" class="contact-item">
+                <i class="fas fa-globe"></i>
+                yourusername.github.io
+            </a>
+            <span class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                Your Location
+            </span>
+        </div>
+        
+        <div class="social-links">
+            <a href="https://github.com/yourusername" class="social-icon" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/yourusername" class="social-icon" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://twitter.com/yourusername" class="social-icon" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </div>
+    </header>
+    
+    <section class="summary">
+        <h2>About Me</h2>
+        <p>A brief professional summary highlighting your expertise, passion, and what you're looking for. Keep it concise and impactful (2-3 sentences).</p>
+    </section>
+    
+    <section class="experience">
+        <h2>Experience</h2>
+        
+        <div class="experience-item">
+            <div class="job-header">
+                <div>
+                    <span class="job-title">Job Title</span> • <span class="company">Company Name</span>
+                </div>
+                <span class="date">Month Year – Present</span>
+            </div>
+            <ul>
+                <li>Accomplishment or responsibility description</li>
+                <li>Another key achievement with metrics if possible</li>
+                <li>Technical details or tools used</li>
+            </ul>
+        </div>
+        
+        <div class="experience-item">
+            <div class="job-header">
+                <div>
+                    <span class="job-title">Previous Job Title</span> • <span class="company">Previous Company</span>
+                </div>
+                <span class="date">Month Year – Month Year</span>
+            </div>
+            <ul>
+                <li>Key responsibility or achievement</li>
+                <li>Project or initiative you led</li>
+                <li>Skills or technologies utilized</li>
+            </ul>
+        </div>
+    </section>
+    
+    <section class="projects">
+        <h2>Projects</h2>
+        
+        <div class="project-item">
+            <div class="project-header">
+                <span class="project-title">Project Name</span>
+                <span class="project-stats">⭐ 1.2k stars • 🍴 234 forks</span>
+            </div>
+            <p>Brief description of the project, what problem it solves, and technologies used.</p>
+            <ul>
+                <li>Key feature or technical challenge overcome</li>
+                <li>Impact or results achieved</li>
+                <li>Link: <a href="#" style="color: var(--primary-color);">github.com/yourusername/project</a></li>
+            </ul>
+        </div>
+        
+        <div class="project-item">
+            <div class="project-header">
+                <span class="project-title">Another Project</span>
+                <span class="project-stats">Open Source • TypeScript</span>
+            </div>
+            <p>Description of another significant project you've worked on.</p>
+        </div>
+    </section>
+    
+    <section class="skills">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <span class="skill-tag">JavaScript/TypeScript</span>
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">AWS</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">Machine Learning</span>
+            <span class="skill-tag">UI/UX Design</span>
+        </div>
+    </section>
+    
+    <section class="education">
+        <h2>Education</h2>
+        <div class="experience-item">
+            <div class="job-header">
+                <div>
+                    <span class="job-title">Degree Name</span> • <span class="company">University Name</span>
+                </div>
+                <span class="date">Year – Year</span>
+            </div>
+            <p>Relevant coursework, achievements, or honors.</p>
+        </div>
+    </section>
+    
+    <footer>
+        <p>Last updated: <span id="current-date">Loading...</span></p>
+        <p>© <span id="current-year">2024</span> Your Name. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        // Auto-update year and date
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+        
+        // Add print button functionality
+        const addPrintButton = () => {
+            const printBtn = document.createElement('button');
+            printBtn.innerHTML = '<i class="fas fa-print"></i> Print CV';
+            printBtn.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background: var(--primary-color);
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 25px;
+                cursor: pointer;
+                font-size: 14px;
+                z-index: 1000;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            `;
+            printBtn.onclick = () => window.print();
+            document.body.appendChild(printBtn);
+        };
+        
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', addPrintButton);
+    </script>
+</body>
+</html>
